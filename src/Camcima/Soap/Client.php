@@ -100,6 +100,7 @@ class Client extends \SoapClient
      */
     function __construct($wsdl, array $options = array())
     {
+    	unset( $options['proxy_host'], $options['proxy_port'], $options['proxy_password'], $options['proxy_login'] );
         parent::__construct($wsdl, $options);
         $this->curlOptions = array();
         $this->lowerCaseFirst = false;
